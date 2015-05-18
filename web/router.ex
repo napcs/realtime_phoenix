@@ -16,6 +16,8 @@ defmodule Typepad.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/pads/new", PadsController, :new
+    get "/pads/:id", PadsController, :show
   end
 
   # Other scopes may use custom stacks.
