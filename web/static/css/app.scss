@@ -78,3 +78,11 @@ form.link, form.button {
     border-bottom: 0;
   }
 }
+
+html, body, .container, main { height: 100%; }
+
+#pad {
+  height: 80%;
+  width: 100%;
+  font-size: 2em;
+}

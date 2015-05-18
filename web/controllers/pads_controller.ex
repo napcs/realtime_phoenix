@@ -4,13 +4,13 @@ defmodule Typepad.PadsController do
   plug :action
 
   def new(conn, _params) do
-    id = 1234
+    id = Pad.get_new
     redirect conn,
       to: pads_path(conn, :show, id)
   end
 
-  def show(conn, _params) do
-    render conn, :show
+  def show(conn, params) do
+    render conn, :show, id: params["id"]
   end
 
 end
