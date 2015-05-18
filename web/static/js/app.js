@@ -9,6 +9,17 @@ let App = {
     channel.join().receive("ok", channel => {
       console.log("Connected!");
     });
+
+    let pad = document.getElementById("pad");
+    pad.addEventListener('input',(event) => {
+      console.log(pad.value);
+      channel.push("change:pad", {content: pad.value});
+    });
+
+    channel.on("update:pad", (message) => {
+        console.log(message.content);
+      pad.value = message.content;
+    });
   }
 };
 

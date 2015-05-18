@@ -6,4 +6,10 @@ defmodule Typepad.PadChannel do
     {:ok, socket}
   end
 
+  def handle_in("change:pad", message, socket) do
+    IO.inspect message
+    broadcast_from! socket, "update:pad", message
+    {:noreply, socket}
+  end
+
 end
