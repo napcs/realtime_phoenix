@@ -20,6 +20,10 @@ defmodule Typepad.Router do
     get "/pads/:id", PadsController, :show
   end
 
+  socket "/ws", Typepad do
+    channel "pad:*", PadChannel
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", Typepad do
   #   pipe_through :api

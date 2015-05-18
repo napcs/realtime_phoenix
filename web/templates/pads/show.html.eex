@@ -1,3 +1,11 @@
 <h2>Pad <%= @id %></h2>
 
 <textarea id="pad"></textarea>
+
+<script>
+  window.appConfig = {
+    onPageLoad: function(App) {
+      App.connectToPad("<%= @id %>");
+    }
+  };
+</script>
